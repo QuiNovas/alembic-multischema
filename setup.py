@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="alembic-multischema",
-    version="0.0.1",
+    version="0.0.2",
     author="Mathew Moon",
     author_email="mmoon@quinovas.com",
     description="Provides a decorator to operate on multiple schemas at once using alembic",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/QuiNovas/alembic-multischema",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
