@@ -17,7 +17,7 @@ Used to decorate the upgrade() and downgrade() functions in a migration. When up
 
 ## Example Usage:
 ```
-"""CreatePatientTable
+"""CreateUsersTable
 
 Revision ID: a6a219646b55
 Revises:
@@ -37,7 +37,7 @@ depends_on = None
 
 @perSchema(schemas=["public", "foo", "bar"])
 def upgrade():
-    patients = text(
+    users = text(
       """CREATE TABLE users
           (
             id serial PRIMARY KEY,
@@ -45,7 +45,7 @@ def upgrade():
             lastname VARCHAR (50)
           );
       """)
-    op.execute(patients)
+    op.execute(users)
 
 @perSchema(schemas=["public", "foo", "bar"])
 def downgrade():
