@@ -18,7 +18,7 @@ app_name = 'alembic-multischema'
 # Versions should comply with PEP440.  For a discussion on single-sourcing
 # the version across setup.py and the project code, see
 # https://packaging.python.org/en/latest/single_source_version.html
-app_version = '0.0.6'
+app_version = '0.0.7'
 
 app_description = 'Multi schema postgres migrations using alembic'
 

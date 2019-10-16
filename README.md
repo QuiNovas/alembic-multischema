@@ -8,12 +8,21 @@ Used to decorate the upgrade() and downgrade() functions in a migration. When up
 #### kwargs:
   * schemas
   A list of schema names to run the function against. If omitted perSchema() will automatically generate a list of non-system schemas from the current database by using getAllNonSystemSchemas()
+  * exclude
+  A list of schema names to exclude from running the function against
+
 
 ### getAllSchemas()
   Returns a list of all schemas in the current database.
+#### kwargs:
+  * exclude
+  A list of schema names to exclude from running the function against
 
 ### getAllNonSystemSchemas()
   Returns a list of schemas in the current database, omitting information_schema and pg_catalog.  
+#### kwargs:
+  * exclude
+  A list of schema names to exclude from running the function against
 
 ## Example Usage:
 ```
