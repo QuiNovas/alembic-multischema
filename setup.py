@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="alembic-multischema",
-    version="0.0.2",
+    version="0.0.3",
     author="Mathew Moon",
     author_email="mmoon@quinovas.com",
     description="Provides a decorator to operate on multiple schemas at once using alembic",
@@ -18,5 +18,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.7',
 )
