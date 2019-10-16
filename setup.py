@@ -9,8 +9,8 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # Convert the README.md to README.rst
-with open('README.rst', 'w', encoding='utf-8') as readme:
-    readme.write(pypandoc.convert('README.md', 'rst', format='markdown'))
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 # TODO: Change the following variables to match your app
 app_name = 'alembic-multischema'
@@ -44,7 +44,8 @@ setup(
     version=app_version,
 
     description=app_description,
-    long_description=pypandoc.convert('README.md', 'rst', format='markdown'),
+    long_description=long_description,
+    long_description_content_type='text/markdown',
 
     url='https://github.com/QuiNovas/alembic-multischema',
 
