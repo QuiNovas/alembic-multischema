@@ -20,14 +20,15 @@ def getSchemas(exclude=[]):
 def perSchema(schemas=getNonSystemSchemas(), exclude=[]):
   def externalWrapper(func):
     def wrapper(*args, **kwargs):
-      for s in schemas if s not in exclude:
-        print("Executing on schema {}".format(s))
-        try:
-          op.execute(text("SET search_path TO {}".format(s)))
-          func(*args, **kwargs)
-          op.execute(text("SET search_path TO default"))
-        except Exception as e:
-          op.execute(text("SET search_path TO default"))
-          raise e
+      for s in schemas:
+         if s not in exclude:
+          print("Executing on schema {}".format(s))
+          try:
+            op.execute(text("SET search_path TO {}".format(s)))
+            func(*args, **kwargs)
+            op.execute(text("SET search_path TO default"))
+          except Exception as e:
+            op.execute(text("SET search_path TO default"))
+            raise e
     return wrapper
   return externalWrapper
